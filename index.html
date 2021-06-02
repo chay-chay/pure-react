@@ -12,10 +12,10 @@
     <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js"></script>
     <script>
 
-    const Person = () => {
+    const Person = props => {
         return React.createElement('div', {}, [
-        React.createElement('h1', {}, 'Chay'),
-                React.createElement('p', {}, 'Developer')
+        React.createElement('h1', {}, props.name),
+                React.createElement('p', {}, props.occupation)
                 ])
     }
       const App = () => {
@@ -23,9 +23,9 @@
           'div',
           {},
           React.createElement('h1', {}, 'REACT IS RENDERED!!'),
-          React.createElement(Person),
-          React.createElement(Person),
-          React.createElement(Person)
+          React.createElement(Person, {name: 'Yihua', occupation: 'developer'}),
+          React.createElement(Person , {name: 'Andrei', occupation: 'instructor'}),
+          React.createElement(Person , {name: 'Chay', occupation: 'developer'})
         );
       };
 
